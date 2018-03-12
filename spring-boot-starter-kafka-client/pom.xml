@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>1memanyus</groupId>
+		<artifactId>spring-boot-starter-kafka-client-parent</artifactId>
+		<version>0.0.1-SNAPSNOT</version>
+		<relativePath>..</relativePath>
+	</parent>
+	
+	<artifactId>spring-boot-starter-kafka-client</artifactId>
+	<name>Context</name>
+	<description>
+		Provides classes and constructs used by the autoconfiguration (and perhaps useful externally)
+	</description>
+	
+	<dependencies>
+		<dependency>
+			<groupId>1memanyus</groupId>
+			<artifactId>spring-boot-kafka-client-context</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-actuator</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients -->
+		<dependency>
+		    <groupId>org.apache.kafka</groupId>
+		    <artifactId>kafka-clients</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-streams -->
+		<dependency>
+		    <groupId>org.apache.kafka</groupId>
+		    <artifactId>kafka-streams</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		
+		
+	</dependencies>
+
+</project>
