@@ -6,12 +6,12 @@
 	<parent>
 		<groupId>1memanyus</groupId>
 		<artifactId>spring-boot-starter-kafka-client-parent</artifactId>
-		<version>0.0.1-SNAPSNOT</version>
+		<version>0.0.1-SNAPSHOT</version>
 		<relativePath>..</relativePath>
 	</parent>
 	
 	<artifactId>spring-boot-starter-kafka-client</artifactId>
-	<name>Context</name>
+	<name>Autoconfiguration</name>
 	<description>
 		Provides classes and constructs used by the autoconfiguration (and perhaps useful externally)
 	</description>

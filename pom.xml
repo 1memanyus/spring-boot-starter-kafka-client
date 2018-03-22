@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>1memanyus</groupId>
 	<artifactId>spring-boot-starter-kafka-client-parent</artifactId>
@@ -34,23 +35,45 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
-		<kafka.version>1.0.1</kafka.version>
+		<kafka.version>1.0.0-cp1</kafka.version>
+		<avro.version>1.8.2</avro.version>
+		<kafka.scala.version>2.11</kafka.scala.version>
+		<confluent.version>4.0.0</confluent.version>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
 			<!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients -->
 			<dependency>
-			    <groupId>org.apache.kafka</groupId>
-			    <artifactId>kafka-clients</artifactId>
-			    <version>${kafka.version}</version>
+				<groupId>org.apache.kafka</groupId>
+				<artifactId>kafka-clients</artifactId>
+				<version>${kafka.version}</version>
 			</dependency>
-			<!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka-streams -->
 			<dependency>
-			    <groupId>org.apache.kafka</groupId>
-			    <artifactId>kafka-streams</artifactId>
-			    <version>${kafka.version}</version>
+				<groupId>org.apache.kafka</groupId>
+				<artifactId>kafka-streams</artifactId>
+				<version>${kafka.version}</version>
 			</dependency>
+
+			<!-- https://mvnrepository.com/artifact/org.apache.avro/avro -->
+			<dependency>
+				<groupId>org.apache.avro</groupId>
+				<artifactId>avro</artifactId>
+				<version>${avro.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>1memanyus</groupId>
+				<artifactId>spring-boot-starter-kafka-client</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+
+			<dependency>
+				<groupId>1memanyus</groupId>
+				<artifactId>spring-boot-kafka-client-context</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
@@ -64,6 +87,16 @@
 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
 	</distributionManagement>
+	<repositories>
+
+		<repository>
+			<id>confluent</id>
+			<url>http://packages.confluent.io/maven/</url>
+		</repository>
+
+	</repositories>
+
+
 	<profiles>
 		<profile>
 			<id>release</id>
